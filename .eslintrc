@@ -1,0 +1,90 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 2021
+  },
+  "plugins": ["html", "import", "vue", "simple-import-sort"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-trailing-spaces": ["error", { "skipBlankLines": true }],
+    "no-multiple-empty-lines": "error",
+    "no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "semi": [2, "always"],
+    "@typescript-eslint/semi": [2, "always"],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
+    "newline-after-var": ["error", "always"],
+    "no-nested-ternary": "off",
+    "no-debugger": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "vue/component-tags-order": [
+      "error",
+      {
+        "order": [
+          "template",
+          "script",
+          "style"
+        ]
+      }
+    ],
+    "vue/component-name-in-template-casing": [
+      "error",
+      "kebab-case",
+      {"registeredComponentsOnly": true}
+    ],
+    "vue/no-reserved-component-names": "error",
+    "vue/component-api-style": ["error", ["script-setup"]],
+    "vue/custom-event-name-casing": ["error", "kebab-case"],
+    "vue/html-comment-content-newline": [
+      "error",
+      {
+        "singleline": "never",
+        "multiline": "always"
+      }
+    ],
+    "vue/html-comment-content-spacing": ["error", "always"],
+    "vue/html-comment-indent": ["error", 2],
+    "vue/no-boolean-default": ["error", "default-false"],
+    "vue/no-static-inline-styles": ["error", {"allowBinding": false}],
+    "vue/no-unregistered-components": [
+      "error",
+      {
+        "ignorePatterns": [
+          "router-link",
+          "router-view"
+        ]
+      }
+    ],
+    "vue/no-lone-template": ["error", {"ignoreAccessible": false}],
+    "vue/no-useless-v-bind": [
+      "error",
+      {"ignoreIncludesComment": false, "ignoreStringEscape": false}
+    ],
+    "vue/no-v-text": ["error"],
+    "vue/padding-line-between-blocks": ["error", "always"],
+    "vue/v-for-delimiter-style": ["error", "of"],
+    "vue/v-on-function-call": ["error", "never"],
+    "vue/v-on-event-hyphenation": ["error", "always", {"autofix": true}]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.spec.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
+}
